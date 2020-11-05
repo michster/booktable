@@ -1,3 +1,4 @@
+import 'package:booktable/screens/restaurants_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:booktable/services/auth.dart';
 import 'package:booktable/utils/screen_helper.dart';

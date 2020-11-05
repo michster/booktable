@@ -1,5 +1,6 @@
 import 'package:booktable/screens/login_screen.dart';
 import 'package:booktable/screens/register_screen.dart';
+import 'package:booktable/screens/restaurants_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class Booktable extends StatelessWidget {
       routes: {
         LoginScreen.id: (context) => LoginScreen(),
         RegisterScreen.id: (context) => RegisterScreen(),
+        RestaurantsScreen.id: (context) => RestaurantsScreen(),
       },
       home: RegisterScreen(),
     );

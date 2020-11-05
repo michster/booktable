@@ -5,13 +5,26 @@ class AuthService {
 
   Future registerWithEMail(String email, String password) async {
     try {
-        await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
     } catch (e) {
       String error = e.toString();
-      if(e.toString().contains("email != null")) {
+      if (e.toString().contains("email != null")) {
         error = "Ohne E-Mail kannst du dich nicht registrieren!";
       }
-      throw(error);
+      throw (error);
+    }
+  }
+
+  Future loginWithEMail(String email, String password) async {
+    try{
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+    } catch (e) {
+      String error = e.toString();
+      if(error.contains("user-not-found")) {
+        error = "Benutzer wurde nicht gefunden!";
+      }
+      throw (error);
     }
   }
 }
